@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsContainer = document.getElementById("results");
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   const heroModal = document.getElementById("heroModal"); // Aseguramos capturar el modal
+  const themeBtn = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
 
   // --- SISTEMA SCROLL-TOP ---
   window.addEventListener("scroll", () => {
@@ -159,6 +161,30 @@ document.addEventListener("DOMContentLoaded", () => {
     sortHeroes();
     renderHeroes();
   });
+
+  /* CLARO OSCURO */
+  
+  // 1. Iniciar en oscuro por defecto (a menos que ya haya elegido claro)
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    if (themeIcon) themeIcon.innerText = "☀️";
+  }
+
+  // 2. Escuchar el click
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      const isLight = document.body.classList.toggle("light-mode");
+
+      // Guardar preferencia y cambiar icono
+      if (isLight) {
+        localStorage.setItem("theme", "light");
+        if (themeIcon) themeIcon.innerText = "☀️";
+      } else {
+        localStorage.setItem("theme", "dark");
+        if (themeIcon) themeIcon.innerText = "🌙";
+      }
+    });
+  }
 
   displayRandomQuote();
   loadInitialHeroes();
