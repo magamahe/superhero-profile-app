@@ -61,8 +61,8 @@ function changePage(page, heroesArray = state.heroes) {
             src="${heroImage}" 
             alt="${hero.name}" 
             onerror="this.onerror=null; this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMEmXkhtTeyC51QGXIUtRq2SzA_oMkJTQgDg&s';"
-            class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full border-4 border-red-600 shadow-[0_0_15px_rgba(225,29,72,0.5)] bg-black"
-          >
+            class="w-[40vw] max-w-[160px] aspect-square object-cover rounded-full border-4 border-red-600 shadow-[0_0_15px_rgba(225,29,72,0.5)] bg-black">
+
         </div>    
         <h3 class="font-bold text-2xl md:text-3xl mb-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,1)] tracking-wide uppercase truncate w-full px-2" style="font-family: 'Bangers';">
           ${hero.name}
