@@ -1,0 +1,107 @@
+/* ==========================================================================
+   GENERAL STYLES AND COMPONENTS UI
+   ========================================================================== */
+/* ==========================================================================
+   HERO SECTION 
+   ========================================================================== */
+.hero-section {
+    background-image: url("https://i.postimg.cc/CLDkNJwm/hero-banner.jpg");
+    /* Ruta relativa para archivos externos */
+    background-size: cover;
+    /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center;
+    /* Centra la imagen independientemente del tamaño de pantalla */
+    height: 500px;
+    /* Altura fija para el área de impacto */
+    background-attachment: fixed;
+    /* Mantiene la imagen estática al hacer scroll (Efecto Parallax) */
+}
+
+/* Glow Text: Efecto de iluminación de neón.*/
+.glow-text {
+    text-shadow:
+        0 0 10px rgb(15, 15, 15),
+        /* Sombra base para definición */
+        0 0 20px rgb(146, 32, 32),
+        /* Resplandor intermedio rojizo */
+        0 0 50px rgb(240, 235, 235);
+    /* Brillo externo blanco para el halo */
+}
+
+/* ==========================================================================
+   SEARCH SECTION 
+   ========================================================================== */
+
+/* Fondo temático para la zona de filtros.*/
+.search-container {
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(15, 23, 42, 0.9)),
+        url("https://i.postimg.cc/C5LSHyzr/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    border-color: #1e293b;
+    /* Un gris azulado oscuro en lugar de rojo */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste para que el resplandor del texto no sea tan rojo si hay mucho */
+.glow-text-subtle {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto extra para los bordes del buscador al estilo comic */
+.search-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animación de pulsación suave.*/
+@keyframes pulse-slow {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    /* Estado inicial y final: Visible */
+    50% {
+        opacity: 0.8;
+    }
+
+    /* Estado intermedio: Semitransparente */
+}
+
+/* ==========================================================================
+   DIV SECTION 2
+   ========================================================================== */
+
+/* Animación personalizada aplicada. */
+.animate-pulse-custom {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Cinta en movimiento- Desplaza el contenido horizontalmente de forma infinita.*/
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Aplicada a la cinta de noticias o divisores dinámicos.  */
+.animate-marquee {
+    display: inline-flex;
+    /* Permite que los elementos se alineen uno tras otro */
+    animation: marquee 20s linear infinite;
+    /* 20 segundos para un movimiento suave */
+}
