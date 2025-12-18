@@ -12,7 +12,7 @@ body {
 
 /* Solo cambia el fondo, el contenido se queda igual */
 body.light-mode {
-    background-color: #f4f1ea !important;
+    background-color: #b1adf3 !important; /*#f4eeea */
     /* Color crema/papel */
 }
 
