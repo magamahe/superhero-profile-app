@@ -1,6 +1,4 @@
 
-# 🦸‍♂️ SuperHero Intelligence Hub - v2.0
-
 <p align="center">
   <img src="https://i.postimg.cc/85y4X6tC/readme-titulo.png" alt="Hero Header" width="100%" style="border-radius:20px; border:2px solid #dc2626; box-shadow:0 0 20px rgba(220,38,38,0.4);">
 </p>
@@ -16,20 +14,17 @@ Una aplicación web interactiva diseñada para fanáticos de los cómics que per
 ---
 
 ## 📑 Índice
-- [🦸‍♂️ SuperHero Intelligence Hub - v2.0](#️-superhero-intelligence-hub---v20)
-  - [📑 Índice](#-índice)
-  - [🔍 Descripción](#-descripción)
-  - [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
-  - [](#)
-  - [🚀 Características](#-características)
-  - [](#-1)
-    - [📸 Galería del Sistema](#-galería-del-sistema)
-  - [📂 Estructura del Proyecto](#-estructura-del-proyecto)
-  - [📡 API y Endpoints](#-api-y-endpoints)
-  - [📥 Cómo ejecutar el proyecto](#-cómo-ejecutar-el-proyecto)
-  - [🤝 Contribuir](#-contribuir)
-  - [⚖️ Licencia](#️-licencia)
-  - [👥 Autor](#-autor)
+- [📑 Índice](#-índice)
+- [🔍 Descripción](#-descripción)
+- [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
+- [🚀 Características](#-características)
+  - [📸 Galería del Sistema](#-galería-del-sistema)
+- [📂 Estructura del Proyecto](#-estructura-del-proyecto)
+- [📡 API y Endpoints](#-api-y-endpoints)
+- [📥 Cómo ejecutar el proyecto](#-cómo-ejecutar-el-proyecto)
+- [🤝 Contribuir](#-contribuir)
+- [⚖️ Licencia](#️-licencia)
+- [👥 Autor](#-autor)
 
 ---
 
@@ -50,6 +45,7 @@ Una aplicación web interactiva diseñada para fanáticos de los cómics que per
 <p align="right">
   <a href="#-índice">Volver al índice ▲</a>
 </p>
+
 ---
 
 ## 🚀 Características
@@ -64,6 +60,7 @@ Una aplicación web interactiva diseñada para fanáticos de los cómics que per
 <p align="right">
   <a href="#-índice">Volver al índice ▲</a>
 </p>
+
 --- 
 
 ### 📸 Galería del Sistema
