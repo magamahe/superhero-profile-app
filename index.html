@@ -33,7 +33,58 @@
         </p>
       </div>
     </section>
-    
+    <!-- ========================================
+         ============== NEWS SECTION ============ 
+         ======================================== -->
+    <section class="relative max-w-4xl mx-auto my-10 px-4">
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-red-600 via-yellow-500 to-red-600 rounded-2xl blur opacity-75 animate-pulse"
+      ></div>
+      <div
+        class="relative bg-black border-4 border-white rounded-xl p-6 md:p-8 transform md:-rotate-1 shadow-2xl"
+      >
+        <div
+          class="absolute -top-5 -left-2 md:-left-5 bg-red-600 text-white font-bold py-1 px-3 md:py-2 md:px-4 rounded-lg transform -rotate-12 border-2 border-white shadow-lg text-xs md:text-base"
+        >
+          TOP SECRET
+        </div>
+        <div class="text-center">
+          <p
+            id="heroQuote"
+            class="text-3xl md:text-6xl italic text-white leading-tight glow-text"
+            style="font-family: 'Bangers', cursive"
+          >
+            “Cargando transmisión...”
+          </p>
+          <p
+            class="mt-4 text-red-500 font-bold uppercase tracking-widest text-[10px] md:text-sm"
+          >
+            — Archivo Confidencial de Héroes —
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--  ========================================
+        ============ DIV SECTION ============ 
+        ======================================== -->
+    <section class="px-4 overflow-hidden">
+      <div
+        class="flex items-center justify-center gap-4 md:gap-8 my-12 opacity-30"
+      >
+        <div
+          class="h-[2px] w-full bg-gradient-to-r from-transparent via-red-600 to-transparent"
+        ></div>
+        <div class="flex gap-2 md:gap-4 shrink-0">
+          <span class="text-2xl md:text-3xl font-black text-red-600">A</span>
+          <span class="text-2xl md:text-3xl font-black text-white">X</span>
+          <span class="text-2xl md:text-3xl font-black text-red-600">M</span>
+        </div>
+        <div
+          class="h-[2px] w-full bg-gradient-to-r from-red-600 via-transparent to-transparent"
+        ></div>
+      </div>
+    </section>
+
     <!--  ========================================
         ============ SEARCH SECTION ============ 
         ======================================== -->
@@ -84,7 +135,28 @@
         </p>
       </div>
     </section>
-    
+    <!--  ========================================
+        ============ DIV SECTION ============ 
+        ======================================== -->
+    <section class="my-8">
+      <div
+        class="relative w-full overflow-hidden bg-red-600 py-2 border-y-2 border-white md:rotate-1 z-20 shadow-lg"
+      >
+        <div class="animate-marquee whitespace-nowrap">
+          <span
+            class="mx-4 text-white font-bold uppercase tracking-widest text-xs md:text-sm"
+            >SUPERMAN ● DC COMICS ● INICIANDO PROTOCOLO ● MULTIVERSO DETECTADO ●
+            BATMAN ● MARVEL ● SPIDERMAN ●
+          </span>
+          <span
+            class="mx-4 text-white font-bold uppercase tracking-widest text-xs md:text-sm"
+            >SUPERMAN ● DC COMICS ● INICIANDO PROTOCOLO ● MULTIVERSO DETECTADO ●
+            BATMAN ● MARVEL ● SPIDERMAN ●
+          </span>
+        </div>
+      </div>
+    </section>
+
     <main class="max-w-7xl mx-auto p-4 md:p-6">
       <!-- ============================================
          ============ PAGINATION SECTION ============ 
@@ -197,7 +269,145 @@
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 min-h-[400px]"
       ></section>
     </main>
-    
+    <!--  ========================================
+        ============ MODAL SECTION ============ 
+        ======================================== -->
+    <dialog
+      id="heroModal"
+      class="rounded-2xl p-0 w-[95%] max-w-4xl max-h-[90vh] bg-[#1a202c] text-white border-2 border-red-600 shadow-[0_0_50px_rgba(220,38,38,0.3)] backdrop:bg-black/80"
+    >
+      <!-- Wrapper -->
+      <div
+        class="relative p-4 flex items-start md:items-center justify-center h-full"
+      >
+        <!-- Cerrar -->
+        <button
+          id="closeModal"
+          class="absolute top-4 right-4 text-3xl text-white hover:text-red-500 transition-colors z-50"
+        >
+          ✖
+        </button>
+
+        <!-- Layout principal -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 w-full max-h-[85vh] overflow-y-auto md:overflow-visible pr-1"
+        >
+          <!-- COLUMNA IZQUIERDA -->
+          <div class="flex flex-col gap-4 justify-center h-full">
+            <!-- Imagen -->
+            <div
+              class="w-full bg-black rounded-xl border-2 border-red-900 shadow-2xl flex items-center justify-center px-3 py-5 md:p-3 overflow-hidden max-h-[40vh] md:max-h-none md:aspect-[3/4]"
+            >
+              <img
+                id="modalImage"
+                src=""
+                alt="Hero"
+                class="max-h-[85%] w-auto object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- COLUMNA DERECHA -->
+          <div class="flex flex-col gap-4 py-1">
+            <!-- Header -->
+            <header class="border-b border-red-600 pb-2">
+              <h2
+                id="modalName"
+                class="text-[clamp(1.6rem,3vw,2.3rem)] font-bold text-red-500 uppercase leading-none"
+                style="font-family: 'Bangers', cursive"
+              ></h2>
+
+              <div class="flex justify-between items-baseline mt-1">
+                <p id="modalRealName" class="text-sm text-gray-400"></p>
+                <p
+                  id="modalPublisher"
+                  class="text-[10px] font-bold uppercase tracking-widest text-red-600"
+                ></p>
+              </div>
+            </header>
+
+            <!-- Expediente -->
+            <section
+              class="bg-gray-800/40 p-3 rounded-xl border-l-4 border-red-600 text-[clamp(0.75rem,0.9vw,0.9rem)] space-y-1"
+            >
+              <p>
+                <span class="text-red-500 font-bold uppercase text-[10px]"
+                  >Ocupación:</span
+                >
+                <span id="modalOccupation"></span>
+              </p>
+              <p>
+                <span class="text-red-500 font-bold uppercase text-[10px]"
+                  >Origen:</span
+                >
+                <span id="modalBirth"></span>
+              </p>
+              <p>
+                <span class="text-red-500 font-bold uppercase text-[10px]"
+                  >Alias:</span
+                >
+                <span id="modalAliases" class="italic text-gray-400"></span>
+              </p>
+            </section>
+
+            <!-- Altura / Peso -->
+            <div
+              class="bg-black/60 p-2 rounded-lg border border-red-900/50 flex justify-around text-center"
+            >
+              <div>
+                <p class="text-[10px] text-red-500 font-bold uppercase">
+                  Altura
+                </p>
+                <p id="modalHeight" class="text-sm font-bold"></p>
+              </div>
+              <div class="border-l border-gray-700"></div>
+              <div>
+                <p class="text-[10px] text-red-500 font-bold uppercase">Peso</p>
+                <p id="modalWeight" class="text-sm font-bold"></p>
+              </div>
+            </div>
+
+            <!-- Conexiones -->
+            <p
+              id="modalConnections"
+              class="text-gray-300 text-[11px] leading-tight border-b border-gray-800 pb-2"
+            ></p>
+
+            <!-- Stats -->
+            <section>
+              <h3
+                class="text-[11px] font-bold mb-2 uppercase text-gray-500 tracking-widest"
+              >
+                Niveles de Poder
+              </h3>
+              <ul id="modalStats" class="grid grid-cols-2 gap-x-6 gap-y-3"></ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!--  ========================================
+        ======== BACK TO TOP BUTTON ============ 
+        ======================================== -->
+    <button
+      id="scrollTopBtn"
+      class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 w-14 h-14 md:w-16 md:h-16 bg-red-600 rounded-full border-4 border-white shadow-2xl flex items-center justify-center transition-all duration-500 transform translate-y-20 opacity-0 active:scale-95 group"
+    >
+      <svg
+        class="w-8 h-8 text-white group-hover:animate-bounce"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
     <!--========================================
         ============ FOOTER SECTION ============ 
         ======================================== -->
