@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* CLARO OSCURO */
-  
+
   // 1. Iniciar en oscuro por defecto (a menos que ya haya elegido claro)
   if (localStorage.getItem("theme") === "light") {
     document.body.classList.add("light-mode");
