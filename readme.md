@@ -11,6 +11,8 @@
 
 Una aplicación web interactiva diseñada para fanáticos de los cómics que permite explorar información detallada de cientos de personajes, combinando estética clásica de cómic con una experiencia moderna, fluida y responsive.
 
+🚀 **Link del Proyecto:** [https://superhero-profile-app.vercel.app/](https://superhero-profile-app.vercel.app/)
+
 ---
 
 ## 📑 Índice
@@ -21,6 +23,8 @@ Una aplicación web interactiva diseñada para fanáticos de los cómics que per
   - [📸 Galería del Sistema](#-galería-del-sistema)
 - [📂 Estructura del Proyecto](#-estructura-del-proyecto)
 - [📡 API y Endpoints](#-api-y-endpoints)
+  - [Mapeo de Datos (Endpoints de Información)](#mapeo-de-datos-endpoints-de-información)
+  - [Lógica de Implementación (api.js)](#lógica-de-implementación-apijs)
 - [📥 Cómo ejecutar el proyecto](#-cómo-ejecutar-el-proyecto)
 - [🤝 Contribuir](#-contribuir)
 - [⚖️ Licencia](#️-licencia)
@@ -29,7 +33,7 @@ Una aplicación web interactiva diseñada para fanáticos de los cómics que per
 ---
 
 ## 🔍 Descripción
-**SuperHero Intelligence Hub** es una central de consulta visual inspirada en los sistemas de inteligencia de los universos de cómics. Presenta información compleja de forma clara, atractiva y accesible, con un diseño oscuro y acentos rojos que refuerzan la identidad visual del proyecto.
+**SuperHero Profile App** es una central de consulta visual inspirada en los sistemas de inteligencia de los universos de cómics. Presenta información compleja de forma clara, atractiva y accesible, con un diseño oscuro y acentos rojos que refuerzan la identidad visual del proyecto.
 
 <p align="right">
   <a href="#-índice">Volver al índice ▲</a>
@@ -50,12 +54,11 @@ Una aplicación web interactiva diseñada para fanáticos de los cómics que per
 
 ## 🚀 Características
 - 🔌 **Consumo de API Externa:** Integración con la [Akabab Superhero API](https://akabab.github.io/superhero-api/api/).
-- 🧾 **Ficha Técnica Detallada:** Modal tipo “Archivo Confidencial”, sin scroll interno.
-- 📱 **Paginación Inteligente:** Navegación optimizada para mobile y desktop.
-- 🎨 **Interfaz Temática:**
-  - Tipografía *Bangers* para títulos.
-  - Estética dark con acentos rojos.
-  - Diseño 100% responsivo.
+- 🧾 **Ficha Técnica Detallada:** Modal tipo “Archivo Confidencial” con biometría y estadísticas.
+- 📱 **Diseño Responsive:** Optimización para móviles, tablets y desktops.
+- 🌓 **Selector de Temas (Dark/Light):** Aunque el diseño fue concebido originalmente para una experiencia **Dark**, se ha integrado un selector de modo claro por requerimientos técnicos del proyecto.
+- 🧪 **Entorno de Pruebas:** Se incluye un archivo especial para testear la adaptabilidad del diseño en diferentes resoluciones. (**preview_c.html**)
+
 
 <p align="right">
   <a href="#-índice">Volver al índice ▲</a>
@@ -110,7 +113,8 @@ Una aplicación web interactiva diseñada para fanáticos de los cómics que per
 │   ├── pagination.js
 │   ├── state.js
 │   └── ui.js
-├── index.html
+├── index.html        <-- Main Entry
+├── preview_c.html    <-- Testing Responsivo
 └── README.md
 ```
 
@@ -122,11 +126,49 @@ Una aplicación web interactiva diseñada para fanáticos de los cómics que per
 
 
 ## 📡 API y Endpoints
-El proyecto consume la **Akabab Superhero API**:
+El proyecto consume la **Akabab Superhero API**, optimiza el rendimiento mediante una estrategia de Cache Global. En lugar de realizar peticiones repetitivas al servidor, los datos se descargan una sola vez y se gestionan localmente en allHeroesCache.
 
-`GET /all.json`  
+### Mapeo de Datos (Endpoints de Información)
+
+**`GET /all.json`**  
 Devuelve la lista completa de héroes con estadísticas, biografía, apariencia y recursos visuales.
 
+De cada objeto retornado por la API, la aplicación extrae y renderiza dinámicamente:
+
+- **images/**: Se utilizan las versiones .sm o .md para las tarjetas y el modal de perfil.
+
+- **powerstats/**: Atributos numéricos (Intelligence, Strength, Speed, Durability, Power, Combat) para generar las barras de nivel.
+
+- **appearance/**: Datos físicos como gender, race y height/weight.
+
+- **biography/**: Información de trasfondo como fullName, placeOfBirth y publisher.
+
+### Lógica de Implementación (api.js)
+Se utilizan funciones asíncronas para garantizar una experiencia de usuario fluida:
+
+**getAllHeroes()**: Centraliza la descarga inicial y almacena los datos en un caché local (allHeroesCache).
+
+**searchHeroes(query)**: Realiza un filtrado dinámico sobre los datos cacheados para una búsqueda instantánea.
+
+**getHeroById(id)**: Recupera la información específica de un héroe para alimentar el modal de detalles.
+
+
+```text
+// Fragmento de la lógica de caché implementada
+async function getAllHeroes() {
+  if (allHeroesCache.length > 0) return allHeroesCache;
+
+  try {
+    const response = await fetch(BASE_URL);
+    if (!response.ok) throw new Error("Error al cargar la base de datos");
+    allHeroesCache = await response.json();
+    return allHeroesCache;
+  } catch (error) {
+    console.error("Error en la API:", error);
+    return [];
+  }
+}
+```
 <p align="right">
   <a href="#-índice">Volver al índice ▲</a>
 </p>
