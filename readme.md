@@ -232,6 +232,7 @@ Este proyecto se distribuye bajo la **Licencia MIT**.
 ---
 
 ## 👥 Autor
+
 **Martínez Herrero, María Gabriela**
 
 <p>
